@@ -58,7 +58,8 @@ Todo lo que carga tu papá vive en `DATA_DIR` (`db.json` + carpeta `uploads/`). 
 
 - **Textos del sitio** (portada, servicios, "cómo trabajamos"): `public/index.html`. Los servicios y pasos son texto genérico: conviene ajustarlos a lo que realmente ofrece.
 - **Colores y estilos**: variables al inicio de `public/css/site.css`.
-- **Logo**: `public/img/logo.png`, `logo-192.png` y `favicon.png` (el original está en `assets/`).
+- **Logo**: versiones sin teléfono en `assets/logos/` (hoja comparativa en `assets/logos/comparativa.png`; se regeneran con `python3 assets/make_logos.py`). El sitio usa la insignia completa (`A`) en la portada y el ícono compacto (`D`) en el encabezado y favicon: `public/img/logo.png`, `logo-192.png` y `favicon.png`. El logo original está en `assets/`.
+- **Teléfono**: se cambia con las variables `WHATSAPP` y `WHATSAPP_DISPLAY`; aparece en el botón "Obtené tu presupuesto" de la sección de contacto y en los botones de WhatsApp.
 
 ## Estructura
 
