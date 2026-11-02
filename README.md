@@ -7,7 +7,7 @@ Sitio web + panel de administración para mostrar obras (refacciones, pérgolas,
 
 ## Cómo funciona (Vercel + Supabase)
 
-- **Vercel** sirve el sitio (`public/`) y la API (`api/[...path].js`, una función).
+- **Vercel** sirve el sitio (`public/`) y la API (`api/index.js`, una función).
 - **Supabase** guarda las obras y categorías (Postgres) y las fotos (Storage, bucket público `works`).
 - Sin dependencias: no hace falta `npm install`.
 
@@ -55,7 +55,7 @@ Todo vive en el proyecto de Supabase (tablas `works`, `categories` y bucket `wor
 ## Estructura
 
 ```
-api/[...path].js   API (función de Vercel)
+api/index.js       API (función de Vercel; vercel.json le reenvía /api/*)
 lib/               Supabase por REST, login/sesión, validaciones
 public/            sitio público (index.html, css, js, img, samples)
 public/admin/      panel de administración

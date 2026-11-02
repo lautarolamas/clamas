@@ -6,7 +6,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const api = require('./api/[...path].js');
+const api = require('./api/index.js');
 
 const PUBLIC = path.join(__dirname, 'public');
 const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'application/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.txt': 'text/plain' };

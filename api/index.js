@@ -258,7 +258,9 @@ route('POST', '/api/admin/upload', async (req, res) => {
 /* ───────────────────────── entrada ───────────────────────── */
 
 async function handle(req, res) {
-  const pathname = new URL(req.url, 'http://localhost').pathname;
+  const u = new URL(req.url, 'http://localhost');
+  // En Vercel, vercel.json reenvía /api/* a esta función con la ruta original en ?__p=
+  const pathname = u.searchParams.has('__p') ? '/api/' + u.searchParams.get('__p').replace(/^\/+/, '') : u.pathname;
   const r = routes.find((x) => x.method === req.method && x.re.test(pathname));
   if (!r) {
     const known = routes.some((x) => x.re.test(pathname));
