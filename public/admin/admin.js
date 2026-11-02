@@ -76,7 +76,7 @@
       showLogin('Tu sesión venció. Volvé a ingresar.');
       throw Object.assign(new Error('auth'), { silent: true });
     }
-    if (!res.ok) throw new Error((data && data.error) || 'Algo salió mal. Probá de nuevo.');
+    if (!res.ok) throw new Error((data && data.error) || 'Algo salió mal (error ' + res.status + '). Probá de nuevo.');
     return data;
   }
 

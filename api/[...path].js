@@ -148,6 +148,18 @@ route('GET', '/api/works', async (req, res) => {
   });
 });
 
+/* ── diagnóstico (sin datos sensibles): /api/health ── */
+
+route('GET', '/api/health', async (req, res) => {
+  const out = {
+    supabaseUrl: !!process.env.SUPABASE_URL,
+    serviceKey: !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+    adminPassSet: !!process.env.ADMIN_PASS,
+  };
+  try { await store.rate.blocked('health-check'); out.loginTable = 'ok'; } catch (e) { out.loginTable = String(e.message).slice(0, 200); }
+  json(res, 200, out);
+});
+
 /* ── login ── */
 
 route('GET', '/api/admin/me', (req, res) => json(res, 200, { authenticated: auth.isAuthed(req) }));
