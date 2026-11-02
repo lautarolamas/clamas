@@ -1,11 +1,10 @@
 {
   "name": "cl-cambio-de-imagen",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Sitio web + panel de administración de obras para CL - Cambio de imagen de tu casa",
-  "main": "server.js",
+  "description": "Sitio web + panel de administración de obras para CL - Cambio de imagen de tu casa (Vercel + Supabase)",
   "scripts": {
-    "start": "node server.js"
+    "dev": "node dev.js"
   },
   "engines": { "node": ">=18" },
   "license": "UNLICENSED"
