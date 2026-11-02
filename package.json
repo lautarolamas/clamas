@@ -1,0 +1,12 @@
+{
+  "name": "cl-cambio-de-imagen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web + panel de administración de obras para CL - Cambio de imagen de tu casa",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}
